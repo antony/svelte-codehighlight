@@ -15,6 +15,6 @@ jobs:
     - name: Deploy to NPM
       uses: actions/npm@master
       env:
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       with:
         args: publish --access public
