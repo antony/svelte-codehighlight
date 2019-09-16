@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<title>Svelte CodeHighlight Demo</title>
+</head>
+
+<body>
+  <script src='./index.js'></script>
+  <script defer>
+    const target = document.createElement('div')
+    document.body.appendChild(target)
+
+    new window.BEYONK.CodeHighlight({
+      target,
+      props: {
+        code: `
+polka()
+.use(
+  cookieParser(),
+  (req, res, next) => {
+    const token = req.cookies['my-jwt-name']
+    const profile = token ? jwt.decode(token) : false
+  
+    return sapper.middleware({
+      session: (req) => {
+        return { authenticated: !!profile, profile }
+      }
+    })(req, res, next)
+  }
+)
+        `,
+        locs: [
+          { line: 2 },
+          { line: 4, length: 2 },
+          { line: 7 },
+          { line: 9 }
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
