@@ -3,7 +3,7 @@
   "svelte": "src/CodeHighlight.svelte",
   "module": "dist/index.mjs",
   "main": "dist/code-highlight.min.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "preinstall": "[ -z \"$NPM_TOKEN\" ] && echo 'local' || echo \"//registry.npmjs.org/:_authToken=${NPM_TOKEN}\" > .npmrc",
     "build": "rollup -c",
