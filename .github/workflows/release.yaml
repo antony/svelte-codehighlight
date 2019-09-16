@@ -2,8 +2,8 @@ name: Prod build
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - /v.*/
 
 jobs:
   build:
@@ -11,6 +11,11 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+
+    - name: Build NPM Package
+      uses: actions/npm@master
+      with:
+        args: run build
 
     - name: Deploy to NPM
       uses: actions/npm@master
