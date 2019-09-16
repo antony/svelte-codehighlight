@@ -35,8 +35,6 @@
     if (e.key === '[') {
       current = current > 0 ? current - 1 : 0
     }
-
-    console.log(current)
   }
 </script>
 
