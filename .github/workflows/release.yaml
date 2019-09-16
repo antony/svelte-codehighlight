@@ -12,6 +12,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
+    - name: Install Dependencies
+      uses: actions/npm@master
+      with:
+        args: i
+
     - name: Build NPM Package
       uses: actions/npm@master
       with:
